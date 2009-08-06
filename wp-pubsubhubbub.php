@@ -78,11 +78,16 @@ function wppsh_notify_hubs($postId) {
         if (!$publisher->isSuccess()) {
             $errors = $publisher->getErrors();
             foreach ($errors as $error) {
-                print_r($error['response']->getBody());
+                echo 'WP Pubsubhubbub could not notify a Hub: '
+                . $error['hubUrl'] . ' Please check the Hub\'s Endpoint URL'
+                . ' is correct on the settings page, and that this Hub is'
+                . ' currently operating.';
             }
         }
     } catch (Exception $e) {
-        print_r($e->getMessage());
+        echo 'WP Pubsubhubbub has an internal FAIL with message: '
+        . $e->getMessage() . ' Please check the Hub Endpoint URLs'
+        . 'are correct on the settings page, and that they are currently operating.'
     }
     return $postId;
 }
