@@ -1,0 +1,21 @@
+<div class="wrap">
+    <h2>Configure one or more Hub Endpoint URLs to notify</h2>
+    <form method="post" action="options.php">
+    <?php wp_nonce_field('update-options'); ?>
+    <?php $wppsh_hub_urls = wppsh_get_hubs(); ?>
+    <table class="form-table">
+        <tr valign="top">
+            <th scope="row">Hub Endpoint URLs:</th>
+            <td>
+                <p>Add each Hub Endpoint URL to a new line:<br /></p>
+                <textarea name="wppsh_hub_urls" cols="40%" rows="8"><?php echo $wppsh_hub_urls; ?></textarea>
+            </td>
+        </tr>
+    </table>
+    <input type="hidden" name="action" value="update" />
+    <input type="hidden" name="page_options" value="wppsh_hub_urls" />
+    <p class="submit">
+        <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+    </p>
+    </form>
+</div>
