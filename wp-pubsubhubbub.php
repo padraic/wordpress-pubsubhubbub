@@ -77,17 +77,19 @@ function wppsh_notify_hubs($postId) {
         $publisher->notifyAll();
         if (!$publisher->isSuccess()) {
             $errors = $publisher->getErrors();
+            echo '<h2>WP Pubsubhubbub Notification Error(s)<h2>';
             foreach ($errors as $error) {
-                echo 'WP Pubsubhubbub configured Hub refused a notificaton: '
+                echo '<p>WP Pubsubhubbub configured Hub refused a notificaton: '
                 . $error['hubUrl'] . ' Please check the Hub\'s Endpoint URL'
                 . ' is correct on the settings page, and that this Hub is'
-                . ' currently operating.';
+                . ' currently operating.<p>';
             }
         }
     } catch (Exception $e) {
-        echo 'WP Pubsubhubbub has an internal FAIL with message: '
+        echo '<h2>WP Pubsubhubbub Failure<h2>';
+        echo '<p>WP Pubsubhubbub has an internal FAIL with message: '
         . $e->getMessage() . ' Please check the Hub Endpoint URLs'
-        . 'are correct on the settings page, and that they are currently operating.'
+        . 'are correct on the settings page, and that they are currently operating.<p>';
     }
     return $postId;
 }
