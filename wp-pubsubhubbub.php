@@ -78,7 +78,7 @@ function wppsh_notify_hubs($postId) {
         if (!$publisher->isSuccess()) {
             $errors = $publisher->getErrors();
             foreach ($errors as $error) {
-                echo 'WP Pubsubhubbub could not notify a Hub: '
+                echo 'WP Pubsubhubbub configured Hub refused a notificaton: '
                 . $error['hubUrl'] . ' Please check the Hub\'s Endpoint URL'
                 . ' is correct on the settings page, and that this Hub is'
                 . ' currently operating.';
