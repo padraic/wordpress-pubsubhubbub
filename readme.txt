@@ -16,7 +16,7 @@ Any Pubsubhubbub enabled Subscriber can then receive an almost immediate update 
 WP Pubsubhubbub has the following features:
 
 * Supports multiple Hubs configured from the settings page
-* Pings all Hubs whenever you publish a new post
+* Pings all Hubs whenever you publish/edit a blog post
 * Adds suitable Atom namespaced link elements for each configured Hub to the top of your RSS 2.0 and Atom 1.0 feeds
 * Maintains compliance with the Pubsubhubbub 0.1 Core Specification and any outstanding amendments
 * WP Pubsubhubbub utilises a Pubsubhubbub Publisher implementation which is fully unit tested for reliability and specification conformance
