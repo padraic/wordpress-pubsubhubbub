@@ -53,7 +53,7 @@ function wpsh_notify_hubs($postId) {
     } catch (Exception $e) {
         throw new Exception($e->getMessage());
     }
-    return $postId
+    return $postId;
 }
 
 /**
@@ -86,7 +86,7 @@ add_action('rss_head', 'wpsh_add_rss_links');
 function wpsh_add_atom_links($rss = false) {
     $namespace = '';
     if ($rss) {
-        $namespace = 'atom:'
+        $namespace = 'atom:';
     }
     $hubs = get_hubs();
     foreach ($hubs as $url) {
@@ -110,7 +110,7 @@ function wpsh_include_options_page() {
 
 function wpsh_write_options_page() {
     $hubs = implode("\n", wpsh_get_hubs());
-    $submitText = _e('Save Changes');
+    $submitText = __('Save Changes');
     $wpnonce = wp_nonce_field('update-options', null, null, false);
     $page = <<<OPTIONS
 <div class="wrap">
