@@ -135,7 +135,7 @@ function wppsh_add_rss_links() {
 add_action('admin_menu', 'wppsh_include_options_page');
 
 function wppsh_include_options_page() {
-    add_options_page('PubSubHubbub Settings', 'PubSubHubbub', 8, __FILE__, 'wppsh_write_options_page');
+    add_options_page('WP Pubsubhubbub Settings', 'WP Pubsubhubbub', 8, __FILE__, 'wppsh_write_options_page');
 }
 
 function wppsh_write_options_page() {
