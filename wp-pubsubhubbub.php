@@ -43,15 +43,15 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * Set up a functioning path for loading the Pubsubhubbub library files
  * needed. Only those required are packaged, imported from latest svn/git HEAD.
  */
-define('WPPSH_LIBRARY', dirname(__FILE__) . '/library');
-set_include_path(get_include_path() . PATH_SEPARATOR . WPPSH_LIBRARY);
+define('WPPSH_ROOT', dirname(__FILE__));
+set_include_path(get_include_path() . PATH_SEPARATOR . WPPSH_ROOT  . '/library');
 require_once 'Zend/Pubsubhubbub/Publisher.php';
 
 // All custom functions/options prefixed with "wppsh_" to avoid name clashes
 
 /**
  * Add an action hook to initiate Pubsubhubbub Publisher notifications
- * to all configured Hubs
+ * to all configured Hubs on blog updates
  */
 add_action('publish_post', 'wppsh_notify_hubs');
 
@@ -82,7 +82,7 @@ function wppsh_notify_hubs($postId) {
             }
         }
     } catch (Exception $e) {
-        throw new Exception($e->getMessage());
+        print_r($e->getMessage());
     }
     return $postId;
 }
@@ -142,5 +142,5 @@ function wppsh_include_options_page() {
 }
 
 function wppsh_write_options_page() {
-    include 'options.phtml';
+    include WPPSH_ROOT . '/options.phtml';
 }
