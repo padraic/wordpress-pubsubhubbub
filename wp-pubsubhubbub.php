@@ -70,7 +70,10 @@ function wppsh_notify_hubs($postId) {
             get_bloginfo('rss2_url'), get_bloginfo('atom_url')
         ));
         $publisher->addUpdatedTopicUrls($feeds);
-        $publisher->addHubUrls(explode("\n", trim(wppsh_get_hubs())));
+        $hubs = explode("\n", trim(wppsh_get_hubs()));
+        foreach ($hubs as $url) {
+            $publisher->addHubUrl(trim($url));
+        }
         $publisher->notifyAll();
         if (!$publisher->isSuccess()) {
             $errors = $publisher->getErrors();
