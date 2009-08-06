@@ -5,7 +5,7 @@ Requires at least: 2.5
 Tested up to: 2.8.3
 Stable tag: /trunk/
 
-Implements a Pubsubhubbub Real-Time Publisher informing Planet Earth of your blog updates now, not later, with support for multiple Hubs and the most recent emerging practices.
+Implements a Pubsubhubbub Real Time Publisher informing Planet Earth of your updates now, not later!
 
 == Description ==
 
