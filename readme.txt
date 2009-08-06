@@ -42,7 +42,7 @@ You can visit [Pubsubhubbub Core 1.0 Specification](http://pubsubhubbub.googleco
 
 = Is this in common use? =
 
-It's getting there! Pubsubhubbub is currently supported by Superfeedr, Rabbithub, and Google itself recently implemented it partially for Googe Reader. When it's adopted in full for Google Reader for feed subscriptions it will be amazing.
+It's getting there! Pubsubhubbub is currently supported by Superfeedr, Rabbithub, and Google itself recently implemented it partially for Google Reader. When it's adopted in full for Google Reader for feed subscriptions it will be amazing.
 
 = Where can I learn more about the author of this plugin? =
 
