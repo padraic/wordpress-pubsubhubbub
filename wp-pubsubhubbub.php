@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Pubsubhubbub
-Plugin URI: http://code.google.com/p/pubsubhubbub/
+Plugin URI: http://github.com/padraic/wordpress-pubsubhubbub/
 Description: Implements a Pubsubhubbub Real-Time Publisher informing Planet Earth of your blog updates now, not later, with support for multiple Hubs and the most recent emerging practices. Edit the Hubs in use on the <a href="./options-general.php?page=wp-pubsubhubbub/wp-pubsubhubbub">WP Pubsubhubbub settings page</a>
 Version: 1.0
 Author: Padraic Brady
@@ -117,9 +117,11 @@ function wppsh_add_atom_links($rss = false) {
         $namespace = 'atom:';
     }
     $hubs = explode("\n", trim(wppsh_get_hubs()));
+    $out = '';
     foreach ($hubs as $url) {
-        echo '<', $namespace,'link rel="hub" href="', $url, '" />';
+        $out .= '<' . $namespace . 'link rel="hub" href="' . trim($url) . '" />' . "\n\t";
     }
+    echo $out;
 }
 
 function wppsh_add_rss_links() {
